@@ -56,6 +56,9 @@ float u2f(unsigned x) {
         足以表示
             e = x + 127
 
+    x > 127
+        [0][1111][0000]
+
 
 */
 float fpwr2(int x) {
