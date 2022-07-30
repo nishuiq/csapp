@@ -16,6 +16,8 @@ float_bits float_negate(float_bits f) {
 
 int main()
 {
-    
+    assert(float_negate(0x89)==0x80000089);
+    assert(float_negate(0x89999999)==0x9999999);
+    assert(float_negate(0x7F900000)==0x7F900000);
     return 0;
 }

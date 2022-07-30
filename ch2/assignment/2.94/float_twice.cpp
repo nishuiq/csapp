@@ -14,6 +14,7 @@ typedef unsigned float_bits;
             先判断一下 frac=0.[x]xxxxx 中第一个[x]是0还是1
                 若[x] = 0 直接 frac << 1
                 若[x] = 1，我们也可以直接 frac << 1
+                    这种做法使得 M = 1.f，而 f = 0.[1]xxx 这个[1]被移走，相当于1/2 * 2 了
                     之后 exp << 23 | frac （滑向规格化）
                     于是就做到 [x][0001][xx]
         [x][111110][xxx] Inf 返回
@@ -22,7 +23,7 @@ typedef unsigned float_bits;
         [x][00001~11101]
             exp + 1
 */
-float_bits float_negate(float_bits f) {
+float_bits float_twice(float_bits f) {
     unsigned sign = f >> 31;
     unsigned exp = f >> 23 & 0xFF;
     unsigned frac = f & 0x7FFFFF;
@@ -34,7 +35,7 @@ float_bits float_negate(float_bits f) {
             这一步非常妙，f = 0.[x]xxx
             当[x] = 0，没问题
             当[x] = 1，位移操作会移到 exp 的域里，相当于 exp+1 了
-            而 E 的值不变，f 的值增大2f了
+            而 E 的值不变，f 的值增大2f了（因为 ）
         */
     } else if (exp == 0xFE) {  // Inf
         exp = 0xFF;
