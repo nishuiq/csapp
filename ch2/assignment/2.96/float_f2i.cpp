@@ -46,9 +46,9 @@ int float_f2i(float_bits f) {
         unsigned E = exp - 127;
         unsigned M = frac | 0x800000;  // M = 1.f
         if (E >= 23) {
-            result = frac << (E - 23);
+            result = M << (E - 23);
         } else {
-            result = frac >> (23 - E);
+            result = M >> (23 - E);
         }
     }
     return sign ? -result : result;
