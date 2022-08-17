@@ -17,5 +17,3 @@ int main()
     good_echo();
     return 0;
 }
-
-2-3年 78w
