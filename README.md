@@ -3,11 +3,16 @@
 此项目存放本人学习 CSAPP 时的笔记内容，chx 文件存放 assignment 和 lab，其中 assignment 存放的是 CSAPP 第三版中文版的家庭作业，也就是课后习题。
 
 目前已完成的章节：
-- ch2 课后习题+datalab
-- ch3 课后习题+boomblab+attacklab
-- ch4 跳过
-- ch5 课后习题
-- ch6 课后习题+cacahelab
+
+- [x] ch2 课后习题 + datalab
+
+- [x] ch3 课后习题 + boomblab + attacklab
+
+- [ ] ch4 跳过
+
+- [x] ch5 课后习题
+
+- [x] ch6 课后习题 + cacahelab
 
 assignment 家庭作业
 - 里面存放本人写的答案，会详解思路过程！
